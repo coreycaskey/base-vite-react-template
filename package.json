@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "prepare": "husky && husky install",
     "storybook": "storybook dev -p 6006",
+    "test:noWatch": "echo 'tbd'",
     "tsc": "tsc -b"
   },
   "dependencies": {
