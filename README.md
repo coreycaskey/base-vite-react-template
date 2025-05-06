@@ -1,6 +1,12 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React and TypeScript working in Vite. Some configurations are also prescribed based on my ecosystem preferences:
+
+1. TS Config: This file mirrors the Vite React TS template, but has some other properties commented that could be beneficial based on the application needs.
+
+2. Vite Config: Added TS config paths plugin
+
+3. Etc.
 
 Currently, two official plugins are available:
 
@@ -17,12 +23,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
