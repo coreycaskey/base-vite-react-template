@@ -11,7 +11,8 @@ This project serves as a **personal base template** for building modern web appl
 - **TypeScript** — typed React components and config files
 - **Babel (via `@vitejs/plugin-react`)** — fast builds and HMR
 
-> [!Note] > `@vitejs/plugin-react-swc` is a plugin alternative to `@vitejs/plugin-react`. It offers faster builds through speedy web compiler at the potential cost of accuracy and support. Consider the most appropriate option for you.
+> [!Note]
+> The `@vitejs/plugin-react-swc` plugin is an alternative to `@vitejs/plugin-react`. It offers faster builds through speedy web compiler at the potential cost of accuracy and support. Consider the most appropriate option for you.
 
 ### 🧪 Testing
 
