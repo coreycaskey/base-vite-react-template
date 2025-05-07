@@ -17,7 +17,7 @@ import { defineConfig } from "vitest/config"; // `defineConfig` from the `vite` 
 
   Other Configurations
     - @vitejs/plugin-react-swc: React plugin using Speedy Web Compiler (alternative to the standard react plugin; evaluate tradeoffs)
-    - vite-plugin-swa: Adds PWA capabilities for offline support
+    - vite-plugin-pwa: Adds PWA capabilities for offline support
 
   Optional Additions for Real-World Apps
     - Environment variable validation (e.g. with zod or env-var)
