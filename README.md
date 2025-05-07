@@ -45,11 +45,36 @@ This project serves as a **personal base template** for building modern web appl
 - Ensures isolated, type-checked builds per environment
 - Avoids polluting app types with test or Storybook globals
 
-### 🐶 Husky Git Hooks
+### 🐶 Husky (Git Hooks)
 
-This project uses [**Husky**](https://typicode.github.io/husky) to enforce pre-commit checks and maintain code quality automatically.
+[**Husky**](https://typicode.github.io/husky) is used to enforce pre-commit and pre-push checks, ensuring code quality before it enters the repository.
 
----
+#### 🪝 Git Hook Tasks
+
+- **pre-commit**: Runs ESLint and TypeScript type checks before allowing a commit.
+- **pre-push**: Runs the full test suite using Vitest to prevent broken tests from being pushed.
+
+These hooks are defined in the `.husky/` directory and are automatically installed via the `prepare` script:
+
+```bash
+npx husky install
+```
+
+To customize hook behavior, edit the shell scripts inside `.husky/pre-commit` and `.husky/pre-push`.
+
+### 🎯 lint-staged
+
+[**lint-staged**](https://github.com/okonet/lint-staged) is used to optimize pre-commit checks by running only on files staged for commit.
+
+#### 🔧 Configuration
+
+The configuration is defined in `lint-staged.config.js` and performs the following commands:
+
+- `npm run tsc` (type checking)
+- `npm run lint` (eslint rules)
+- `npm run format` (prettier formatting)
+
+lint-staged runs automatically as part of the `pre-commit` hook via Husky.
 
 ## 📦 Scripts
 
@@ -63,8 +88,6 @@ npm run storybook         # Start Storybook locally
 npm run storybook:build   # Build Storybook static site
 npm run format            # Format files with Prettier
 ```
-
----
 
 ## 📁 Directory Overview
 
@@ -82,15 +105,11 @@ eslint.config.js    # Flat ESLint config
 vite.config.ts      # Vite build and plugin setup
 ```
 
----
-
 ## 🧰 Notes
 
 - Uses `moduleResolution: "Bundler"` and `jsx: "react-jsx"`
 - Path aliases can be configured in `tsconfig.app.json` and used via ESLint resolver
 - ESLint errors like “No default export found” are avoided by relying on named imports and automatic JSX runtime
-
----
 
 ## 🚀 Getting Started
 
